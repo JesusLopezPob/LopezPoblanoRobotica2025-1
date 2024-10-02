@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<robot name="robot_scara" xmlns:xacros="http://ros/wiki/xacro" >
+<robot name="robot_scara" xmlns:xacro="http://ros.org/wiki/xacro">
+	<gazebo reference="base_link">
+		<material>Gazebo/Grey</material>
+	</gazebo>
 
-    <gazebo reference="base_link">
-        <material> gazebo/Grey</material>
-    </gazebo>
+	<gazebo reference="link_1">
+		<material>Gazebo/Red</material>
+	</gazebo>
 
-    <gazebo reference="link_1">
-        <material> gazebo/Red</material>
-    </gazebo>
+	<gazebo reference="link_2">
+		<material>Gazebo/Green</material>
+	</gazebo>
 
-    <gazebo reference="link_2">
-        <material> gazebo/Green</material>
-    </gazebo>
-
-    <gazebo reference="link_3">
-        <material> gazebo/Blue</material>
-    </gazebo>
-
-
-
+	<gazebo reference="link_3">
+		<material>Gazebo/Blue</material>
+	</gazebo>
 </robot>
