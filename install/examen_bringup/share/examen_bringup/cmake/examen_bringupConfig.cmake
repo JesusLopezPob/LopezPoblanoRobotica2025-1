@@ -1,0 +1,1 @@
+/home/robousr/ROS2Dev/robot_2025_ws/src/build/examen_bringup/ament_cmake_core/examen_bringupConfig.cmake
