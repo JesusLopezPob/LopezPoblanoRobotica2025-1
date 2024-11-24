@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="" xmlns:xacro="http://ros.org/wiki/xacro" >
+
+
+     <material name="silver">
+    <color rgba="0.700 0.700 0.700 1.000"/>
+  </material>
+
+  <link name="world">
+      </link>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="model://examen_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="model://examen_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Link_11">
+    <inertial>
+      <origin xyz="-1.9362964206263425e-06 0.00023502025240244623 0.028408678739873995" rpy="0 0 0"/>
+      <mass value="0.1881057997429459"/>
+      <inertia ixx="0.0002013136648267291" iyy="0.00019527411438701012" izz="0.00010614315800378446" ixy="-2.3656878209275364e-09" iyz="-2.1885649694925894e-06" ixz="9.6873738451118e-09"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.000674 0.00181 -0.051254" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename= "model://examen_description/meshes/Link_11.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="-0.000674 0.00181 -0.051254" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename= "model://examen_description/meshes/Link_11.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <link name="Link_21">
+    <inertial>
+      <origin xyz="-0.20895744730856985 -0.026270064504570433 -5.6397706098790246e-05" rpy="0 0 0"/>
+      <mass value="0.2624863981848249"/>
+      <inertia ixx="0.00010197354468461468" iyy="0.003282178036223188" izz="0.0033091252582860588" ixy="5.687861080477485e-06" iyz="1.714904543647115e-10" ixz="-1.4003145936553052e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.000674 -0.024215 -0.119279" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="model://examen_description/meshes/Link_21.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="-0.000674 -0.024215 -0.119279" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="model://examen_description/meshes/Link_21.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+
+  <link name="Link_31">
+    <inertial>
+      <origin xyz="-0.1478467249434351 0.024499724527640994 0.004150145149179232" rpy="0 0 0"/>
+      <mass value="0.3796337573160341"/>
+      <inertia ixx="0.00023463252909112445" iyy="0.0015114267774865436" izz="0.001499332787807714" ixy="2.208562044185569e-11" iyz="3.5764531120712276e-12" ixz="3.905214442601057e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.314576 0.026785 -0.119029" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="model://examen_description/meshes/Link_31.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="0.314576 0.026785 -0.119029" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="model://examen_description/meshes/Link_31.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="Link_41">
+    <inertial>
+      <origin xyz="-0.044654234436106166 -0.0190920304552995 -0.0043414869190231825" rpy="0 0 0"/>
+      <mass value="0.15497848066200157"/>
+      <inertia ixx="4.902510800966833e-05" iyy="0.00014627365156272276" izz="0.00014226945050014456" ixy="7.042813085306676e-07" iyz="8.769989213383296e-08" ixz="-9.054534622141355e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.569076 -0.016715 -0.119029" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="model://examen_description/meshes/Link_41.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+      <material/>
+    </visual>
+    <collision>
+      <origin xyz="0.569076 -0.016715 -0.119029" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="model://examen_description/meshes/Link_41.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+
+  <link name="P">
+  </link>
+
+
+  <joint name="world_joint" type="fixed">
+      <parent link="world"/>
+      <child link="base_link"/>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+  </joint>
+
+
+
+  <joint name="base_link_to_link_1" type="revolute">
+    <origin xyz="0.000674 -0.00181 0.051254" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="Link_11"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit upper="3.141593" lower="-3.141593" effort="100" velocity="100"/>
+  </joint>
+
+    
+
+  <joint name="link_1_to_link_2" type="revolute">
+    <origin xyz="0.0 0.026025 0.068025" rpy="0 0 0"/>
+    <parent link="Link_11"/>
+    <child link="Link_21"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <limit upper="3.141593" lower="-3.141593" effort="100" velocity="100"/>
+  </joint>
+
+
+
+  <joint name="link_2_to_link_3" type="revolute">
+    <origin xyz="-0.31525 -0.051 -0.00025" rpy="0 0 0"/>
+    <parent link="Link_21"/>
+    <child link="Link_31"/>
+    <axis xyz="-0.0 -1.0 0.0"/>
+    <limit upper="3.141593" lower="-3.141593" effort="100" velocity="100"/>
+  </joint>
+
+
+  <joint name="link_3_to_link_4" type="revolute">
+    <origin xyz="-0.2545 0.0435 0.0" rpy="0 0 0"/>
+    <parent link="Link_31"/>
+    <child link="Link_41"/>
+    <axis xyz="-0.0 -1.0 -0.0"/>
+    <limit upper="3.141593" lower="-3.141593" effort="100" velocity="100"/>
+  </joint>
+
+
+  <joint name="link_P_joint" type="fixed">
+      <origin xyz="-0.1 -0.02 0.0" rpy="0 4.71 0"/>
+      <parent link="Link_41"/>
+      <child link="P"/>
+  </joint>
+
+</robot>

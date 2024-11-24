@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot name="Propuesta2" xmlns:xacro="http://ros.org/wiki/xacro" >
+
+    <xacro:property name="package_name" value="examen_description"/>
+
+    <xacro:include filename="$(find ${package_name})/urdf/Propuesta2_urdf.xacro"/>
+
+    <xacro:include filename="$(find ${package_name})/urdf/Propuesta2_gz_properties.xacro"/>
+
+ <!-- 
+    <xacro:include filename="$(find ${package_name})/urdf/Propuesta2_basic_position_controller.xacro"/> 
+       -->  
+
+    <xacro:include filename="$(find ${package_name})/urdf/position_controller.xacro"/>
+
+
+
+</robot> 

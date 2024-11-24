@@ -41,6 +41,6 @@
 
   <export>
     <build_type>ament_cmake</build_type>
-    <gazebo_ros gazebo_model_path = "/home/robousr/ROS2Dev/robot_2025_ws/install/examen_description/share/"/>
+    <gazebo_ros gazebo_model_path = "/home/robousr/ROS2Dev/Examen_Rob_2025/install/examen_description/share/"/>
   </export>
 </package>

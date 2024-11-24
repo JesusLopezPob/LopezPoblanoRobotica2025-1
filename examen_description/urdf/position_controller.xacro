@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Aqui comienza el robot-->
-<robot name="robot_scara" xmlns:xacro="http://ros.org/wiki/xacro" >
+<robot name="Propuesta2" xmlns:xacro="http://ros.org/wiki/xacro" >
 
     <ros2_control name="GazeboSystem" type="system">
         <hardware>
             <plugin>gazebo_ros2_control/GazeboSystem</plugin>
         </hardware>
-        <joint name="link_1_joint">
+        <joint name="base_link_to_link_1">
             <command_interface name="position"/>
             <state_interface name="position"/>
             <state_interface name="velocity"/>
             <state_interface name="effort"/>
         </joint>
-        <joint name="link_2_joint">
+        <joint name="link_1_to_link_2">
             <command_interface name="position"/>
             <state_interface name="position"/>
             <state_interface name="velocity"/>
             <state_interface name="effort"/>
         </joint>
-        <joint name="link_3_joint">
+        <joint name="link_2_to_link_3">
+            <command_interface name="position"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+            <state_interface name="effort"/>
+        </joint>
+        <joint name="link_3_to_link_4">
             <command_interface name="position"/>
             <state_interface name="position"/>
             <state_interface name="velocity"/>
@@ -29,7 +35,7 @@
     <!--Pluging de control -->
     <gazebo>
         <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control" >
-            <parameters>$(find ${package_name})/config/scara_position_controller.yaml</parameters>
+            <parameters>$(find ${package_name})/config/Propuesta2_position_controller.yaml</parameters>
         </plugin>
     </gazebo>
 

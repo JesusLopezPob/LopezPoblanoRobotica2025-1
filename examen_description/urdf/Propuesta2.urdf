@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Aqui comienza el robot-->
+<robot name="Propuesta2"   >
+
+  <link name="world">
+        </link>
+
+
+    <!-- Base fija -->
+    <link name="base_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.03" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.06 0.06 0.06"/>             
+            </geometry>
+            <material name="brown">
+                <color rgba="0.1 0.43 0.43 1.0" />
+            </material>      
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.03" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.06 0.06 0.06"/>             
+            </geometry>          
+        </collision>
+        <inertial>
+            <mass value="0.5"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/> 
+        </inertial>
+    </link>
+
+    <!-- Base giratoria -->
+    <link name="rotating_base">
+        <visual>
+            <origin xyz="0.0 0.0 0.06" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder length="0.06" radius="0.03"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 1.0 1.0" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.06" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder length="0.06" radius="0.03"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.3"/>
+            <origin xyz="0.0 0.0 0.06" rpy="0.0 0.0 0.0"/>
+            <inertia ixx="0.05" ixy="0.0" ixz="0.0" iyy="0.05" iyz="0.0" izz="0.05"/>
+        </inertial>
+    </link>
+
+
+    <!-- Primer enlace -->
+    <link name="link_1">
+        <visual>
+            <origin xyz="0.1575 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.315 0.05 0.05"/>             
+            </geometry>
+            <material name="red">
+                <color rgba="0.5 0.0 0.0 1.0" />
+            </material>      
+        </visual>
+        <collision>
+            <origin xyz="0.1575 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.315 0.05 0.05"/>             
+            </geometry>          
+        </collision>
+        <inertial>
+            <mass value="0.3"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/> 
+        </inertial>
+    </link>
+
+
+
+    <!-- Segundo enlace -->
+    <link name="link_2">
+        <visual>
+            <origin xyz="0.127 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.254 0.05 0.05"/>             
+            </geometry>
+            <material name="yellow">
+                <color rgba="0.5 0.5 0.0 1.0" />
+            </material>      
+        </visual>
+        <collision>
+            <origin xyz="0.127 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.254 0.05 0.05"/>             
+            </geometry>          
+        </collision>
+        <inertial>
+            <mass value="0.2"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/> 
+        </inertial>
+    </link>
+
+
+
+    <!-- Tercer enlace -->
+    <link name="link_3">
+        <visual>
+            <origin xyz="0.043725 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.08745 0.05 0.05"/>             
+            </geometry>
+            <material name="green">
+                <color rgba="0.0 1.0 0.0 1.0" />
+            </material>      
+        </visual>
+        <collision>
+            <origin xyz="0.043725 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.08745 0.05 0.05"/>             
+            </geometry>          
+        </collision>
+        <inertial>
+            <mass value="0.2"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/> 
+        </inertial>
+    </link>
+
+
+    <link name="P">
+    </link>
+
+
+
+
+
+    <joint name="world_to_base" type="fixed">
+      <parent link="world"/>
+      <child link="base_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+
+
+    <joint name="base_link_to_link_1" type="revolute">
+      <parent link="base_link"/>
+      <child link="rotating_base"/>
+      <axis xyz="0 0 1"/> <!-- Rotación sobre Z -->
+      <limit lower="-3.14159" upper="3.14159" velocity="1.0" effort="100.0"/>
+      <origin xyz="0.0 0.0 0.03" rpy="0 0 0"/>
+    </joint>
+
+
+    <joint name="link_1_to_link_2" type="revolute">
+      <parent link="rotating_base"/>
+      <child link="link_1"/>
+      <axis xyz="0 1 0"/> <!-- Rotación en plano XY -->
+      <limit lower="-1.57" upper="1.57" velocity="1.0" effort="100.0"/>
+      <origin xyz="0.0 0.0 0.06" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+
+
+    <joint name="link_2_to_link_3" type="revolute">
+      <parent link="link_1"/>
+      <child link="link_2"/>
+      <axis xyz="0 1 0"/> <!-- Rotación en plano XY -->
+      <limit lower="-1.57" upper="1.57" velocity="1.0" effort="100.0"/>
+      <origin xyz="0.315 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </joint>
+  
+    <joint name="link_3_to_link_4" type="revolute">
+      <parent link="link_2"/>
+      <child link="link_3"/>
+      <axis xyz="0 1 0"/> <!-- Rotación en plano XY -->
+      <limit lower="-1.57" upper="1.57" velocity="1.0" effort="100.0"/>
+      <origin xyz="0.254 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+
+  <joint name="link_P_joint" type="fixed">
+    <origin xyz="0.096 0.0 0.0" rpy="0 0 0"/>
+    <parent link="link_3"/>
+    <child link="P"/>
+  </joint>
+
+
+
+
+</robot>

@@ -1,0 +1,19 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    Propuesta2_position_controller: #-------
+      type: forward_command_controller/ForwardCommandController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+Propuesta_position_controller: #---------
+  ros__parameters:
+    joints:
+      - base_link_to_link_1
+      - link_1_to_link_2
+      - link_2_to_link_3
+      - link_3_to_link_4
+      - link_P_joint
+    interface_name: position

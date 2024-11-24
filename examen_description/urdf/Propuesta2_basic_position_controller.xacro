@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="Propuesta2" xmlns:xacro="http://ros.org/wiki/xacro" >
+
+    <gazebo>
+        <plugin name="joint_state_publisher_controller" filename="libgazebo_ros_joint_state_publisher.so">
+            <!--update rate Hz-->
+            <update_rate>10</update_rate>
+            <joint_name>base_link_to_link_1</joint_name>
+            <joint_name>link_1_to_link_2</joint_name>
+            <joint_name>link_2_to_link_3</joint_name>
+            <joint_name>link_3_to_link_4</joint_name>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="joint_pose_trajectory_controller" filename="libgazebo_ros_joint_pose_trajectory.so">
+            <update_rate>2</update_rate> 
+        </plugin>     
+    </gazebo>
+
+</robot>
